@@ -10,8 +10,8 @@ import org.springframework.stereotype.Component;
 public class CustomerMapper {
     public Customer from(CustomerRequest request){
         Customer customer = new Customer();
-        customer.setName(request.name());
-        customer.setEmail(request.email());
+        customer.setName(request.getName());
+        customer.setEmail(request.getEmail());
         return customer;
     }
 
@@ -21,9 +21,9 @@ public class CustomerMapper {
 
     public CustomerServiceOuterClass.Customer fromCustomerResponse(CustomerResponse response){
         CustomerServiceOuterClass.Customer customer1 = CustomerServiceOuterClass.Customer.newBuilder()
-                .setId(response.id())
-                .setName(response.name())
-                .setEmail(response.email())
+                .setId(response.getId())
+                .setName(response.getName())
+                .setEmail(response.getEmail())
                 .build();
         return customer1;
     }
